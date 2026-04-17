@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eswar Sai — Data Scientist & Data Analyst</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Mono:wght@400;600&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <style>
         * {
             margin: 0;
@@ -35,6 +39,42 @@
             color: var(--text-primary);
             overflow-x: hidden;
             position: relative;
+        }
+
+        /* ===== 3D TEXT EFFECTS ===== */
+        h1,
+        h2,
+        h3,
+        .section-header,
+        .project-number,
+        .hero-tag {
+            text-shadow:
+                1px 1px 0px var(--bg-card),
+                2px 2px 0px var(--accent-primary),
+                3px 3px 0px var(--accent-cyan),
+                4px 4px 0px var(--bg-dark),
+                5px 5px 15px rgba(6, 182, 212, 0.6) !important;
+        }
+
+        .project-title,
+        .skill-name,
+        .hero-subtitle,
+        .hero-cta,
+        .tag {
+            text-shadow:
+                1px 1px 0px var(--bg-dark),
+                2px 2px 0px rgba(59, 130, 246, 0.6),
+                3px 3px 8px rgba(59, 130, 246, 0.4) !important;
+        }
+
+        p,
+        .project-year,
+        .project-description,
+        .about-text,
+        .footer-text,
+        .project-link,
+        .scroll-text {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8) !important;
         }
 
         /* ===== PRELOADER ===== */
@@ -83,9 +123,11 @@
             0% {
                 transform: rotateX(0deg) rotateY(0deg) scale(1);
             }
+
             50% {
                 transform: rotateX(15deg) rotateY(20deg) scale(1.05);
             }
+
             100% {
                 transform: rotateX(0deg) rotateY(0deg) scale(1);
             }
@@ -103,7 +145,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .preloader-text {
@@ -114,8 +158,15 @@
         }
 
         @keyframes fadeInOut {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         /* ===== SCROLL PROGRESS BAR ===== */
@@ -135,7 +186,8 @@
             cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="%233B82F6"/><circle cx="12" cy="12" r="12" fill="none" stroke="%233B82F6" stroke-width="1.5"/></svg>') 12 12, auto;
         }
 
-        a, button {
+        a,
+        button {
             cursor: pointer;
         }
 
@@ -171,15 +223,38 @@
             font-size: clamp(3rem, 12vw, 12rem);
             font-weight: 900;
             letter-spacing: -0.02em;
-            text-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
             line-height: 1.1;
             margin-bottom: 1rem;
+            color: #FFFFFF;
+            animation: hero3DBounce 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes hero3DBounce {
+            0% {
+                transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateZ(0px);
+                text-shadow:
+                    1px 1px 0px #0f172a,
+                    3px 3px 0px #3B82F6,
+                    5px 5px 0px #06B6D4,
+                    7px 7px 0px #080808,
+                    10px 10px 30px rgba(6, 182, 212, 0.6);
+            }
+
+            100% {
+                transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) translateZ(20px);
+                text-shadow:
+                    -1px 1px 0px #0f172a,
+                    -3px 3px 0px #3B82F6,
+                    -5px 5px 0px #06B6D4,
+                    -7px 7px 0px #080808,
+                    -10px 10px 30px rgba(59, 130, 246, 0.8);
+            }
         }
 
         .hero-title-letter {
             display: inline-block;
             animation: letterReveal 0.6s ease-out backwards;
-            color: var(--text-primary);
+            color: inherit;
         }
 
         @keyframes letterReveal {
@@ -187,6 +262,7 @@
                 opacity: 0;
                 transform: scale(0) translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -196,7 +272,9 @@
         .hero-subtitle {
             font-family: 'IBM Plex Mono', monospace;
             font-size: clamp(0.9rem, 2vw, 1.2rem);
-            color: var(--text-secondary);
+            color: #F8FAFC !important;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(6, 182, 212, 0.6) !important;
+            font-weight: 500;
             letter-spacing: 0.05em;
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out 1.2s backwards;
@@ -207,6 +285,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -215,11 +294,15 @@
 
         .hero-tag {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 1.1rem;
-            color: var(--accent-primary);
+            font-size: 1.15rem;
+            color: #38BDF8 !important;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.6) !important;
+            font-weight: 600;
             height: 2em;
             min-height: 2em;
-            display: inline-block;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
             animation: fadeInUp 0.8s ease-out 1.8s backwards;
         }
 
@@ -275,13 +358,20 @@
             border: 2px solid var(--accent-primary);
             border-top: none;
             border-left: none;
-            transform: rotate(-45deg);
+            transform: translateY(0) rotate(45deg);
             animation: bounce 2s infinite;
         }
 
         @keyframes bounce {
-            0%, 100% { transform: rotate(-45deg) translateY(0); }
-            50% { transform: rotate(-45deg) translateY(8px); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(45deg);
+            }
+
+            50% {
+                transform: translateY(8px) rotate(45deg);
+            }
         }
 
         .scroll-text {
@@ -320,6 +410,7 @@
                 width: 0;
                 opacity: 0;
             }
+
             to {
                 width: 60px;
                 opacity: 1;
@@ -355,7 +446,7 @@
         .project-card:hover {
             border-color: rgba(59, 130, 246, 0.6);
             box-shadow: 0 0 60px rgba(59, 130, 246, 0.3),
-                        inset 0 0 40px rgba(59, 130, 246, 0.1);
+                inset 0 0 40px rgba(59, 130, 246, 0.1);
             transform: translateY(-8px);
         }
 
@@ -364,6 +455,7 @@
                 opacity: 0;
                 transform: translateY(60px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -480,6 +572,7 @@
                 opacity: 0;
                 transform: scale(0.8);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1);
@@ -488,9 +581,10 @@
 
         .skill-badge:hover {
             border-color: rgba(6, 182, 212, 0.6);
-            box-shadow: 0 0 40px rgba(6, 182, 212, 0.3),
-                        inset 0 0 30px rgba(6, 182, 212, 0.05);
-            transform: scale(1.08) rotateY(5deg);
+            box-shadow: 0 15px 60px rgba(6, 182, 212, 0.6),
+                inset 0 0 30px rgba(6, 182, 212, 0.1);
+            transform: scale(1.15) translateY(-10px) rotateY(10deg) rotateX(5deg);
+            z-index: 10;
         }
 
         .skill-name {
@@ -498,6 +592,35 @@
             font-size: 1rem;
             font-weight: 700;
             color: var(--text-primary);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .skill-icon {
+            font-size: 4rem;
+            position: absolute;
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .skill-icon-emoji {
+            font-size: 4rem;
+            position: absolute;
+            opacity: 0;
+            transform: translateY(20px) scale(0.5);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-style: normal;
+        }
+
+        .skill-badge:hover .skill-name {
+            transform: translateY(35px);
+            opacity: 0;
+        }
+
+        .skill-badge:hover .skill-icon,
+        .skill-badge:hover .skill-icon-emoji {
+            opacity: 1;
+            transform: translateY(0) scale(1.1);
         }
 
         /* ===== ABOUT SECTION ===== */
@@ -629,6 +752,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- PRELOADER -->
     <div class="preloader" id="preloader">
@@ -647,17 +771,25 @@
         <canvas class="hero-canvas" id="heroCanvas"></canvas>
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="hero-title-letter" style="animation-delay: 0.1s;">E</span><span class="hero-title-letter" style="animation-delay: 0.2s;">S</span><span class="hero-title-letter" style="animation-delay: 0.3s;">W</span><span class="hero-title-letter" style="animation-delay: 0.4s;">A</span><span class="hero-title-letter" style="animation-delay: 0.5s;">R</span>
+                <span class="hero-title-letter" style="animation-delay: 0.1s;">E</span><span class="hero-title-letter"
+                    style="animation-delay: 0.2s;">S</span><span class="hero-title-letter"
+                    style="animation-delay: 0.3s;">W</span><span class="hero-title-letter"
+                    style="animation-delay: 0.4s;">A</span><span class="hero-title-letter"
+                    style="animation-delay: 0.5s;">R</span>
                 <br>
-                <span class="hero-title-letter" style="animation-delay: 0.6s;">S</span><span class="hero-title-letter" style="animation-delay: 0.7s;">A</span><span class="hero-title-letter" style="animation-delay: 0.8s;">I</span>
+                <span class="hero-title-letter" style="animation-delay: 0.6s;">S</span><span class="hero-title-letter"
+                    style="animation-delay: 0.7s;">A</span><span class="hero-title-letter"
+                    style="animation-delay: 0.8s;">I</span>
             </h1>
             <p class="hero-subtitle">Data Scientist · Data Analyst · Python Developer</p>
             <div class="hero-tag" id="cyclingTag">Python Developer</div>
-            <button class="hero-cta" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Explore Work</button>
-            <div class="scroll-indicator" id="scrollIndicator">
-                <div class="scroll-arrow"></div>
-                <div class="scroll-text">Scroll to explore</div>
-            </div>
+            <button class="hero-cta"
+                onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Explore
+                Work</button>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-arrow"></div>
+            <div class="scroll-text">Scroll to explore</div>
         </div>
     </section>
 
@@ -665,64 +797,114 @@
     <section class="projects" id="projects">
         <h2 class="section-header">Featured Projects</h2>
         <div class="section-divider"></div>
-        
-        <div class="projects-grid">
+
+        <div class="projects-grid" id="projectsGrid">
             <!-- Project 1 -->
             <div class="project-card scroll-triggered">
                 <div class="project-number">01</div>
-                <h3 class="project-title">Sentiment Analysis & NLP Classification</h3>
+                <h3 class="project-title">AI Diet Plan Generator</h3>
                 <div class="project-year">2024</div>
-                <p class="project-description">Advanced NLP model analyzing customer reviews and social media sentiment. Built with Python, scikit-learn, and VADER. Achieved 89% accuracy on test dataset with real-time sentiment tracking dashboard.</p>
+                <p class="project-description">A full-stack personalized diet planning application that generates custom
+                    meal plans based on body metrics and fitness goals. Integrated with a conversational AI nutrition
+                    assistant powered by Anthropic's Claude API.</p>
                 <div class="project-tags">
                     <span class="tag">Python</span>
-                    <span class="tag">scikit-learn</span>
-                    <span class="tag">NLTK</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Matplotlib</span>
+                    <span class="tag">Flask</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">AI/LLM</span>
                 </div>
-                <a href="https://github.com/Eswar122-bit" class="project-link">View Repository</a>
+                <a href="https://github.com/Eswar122-bit/diet-plan-app" class="project-link" target="_blank">View
+                    Repository</a>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card scroll-triggered" style="animation-delay: 0.15s;">
+            <div class="project-card scroll-triggered" style="animation-delay: 0.2s;">
                 <div class="project-number">02</div>
-                <h3 class="project-title">Predictive House Price Regression Model</h3>
+                <h3 class="project-title">OpenEnv Email Triage AI Benchmark</h3>
                 <div class="project-year">2024</div>
-                <p class="project-description">Comprehensive real estate price prediction using multiple regression techniques. Dataset: 20,000+ houses with 25+ features. Best model: XGBoost with R² = 0.94. Interactive Streamlit dashboard included.</p>
+                <p class="project-description">Developed an OpenEnv-compliant benchmark environment to evaluate AI
+                    agents on real-world customer support workflows. Tests models on prioritizing emails, drafting
+                    professional replies, and classifying intent under strict SLA constraints.</p>
                 <div class="project-tags">
                     <span class="tag">Python</span>
-                    <span class="tag">XGBoost</span>
-                    <span class="tag">Scikit-learn</span>
-                    <span class="tag">Streamlit</span>
-                    <span class="tag">SQL</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">HuggingFace</span>
+                    <span class="tag">OpenEnv</span>
                 </div>
-                <a href="https://github.com/Eswar122-bit" class="project-link">View Repository</a>
+                <a href="https://github.com/Eswar122-bit/open-env-email-triage" class="project-link"
+                    target="_blank">View Repository</a>
             </div>
 
             <!-- Project 3 -->
-            <div class="project-card scroll-triggered" style="animation-delay: 0.3s;">
+            <div class="project-card scroll-triggered" style="animation-delay: 0.4s;">
                 <div class="project-number">03</div>
-                <h3 class="project-title">Customer Segmentation & Clustering Analysis</h3>
+                <h3 class="project-title">COVID-19 Data Analysis & Enrichment</h3>
                 <div class="project-year">2024</div>
-                <p class="project-description">RFM analysis with K-means & Hierarchical clustering. Segmented 50,000+ customers into 5 distinct groups. Used silhouette score optimization (0.68). Provided insights for targeted marketing campaigns.</p>
+                <p class="project-description">A comprehensive data analytics pipeline using OWID datasets. The script
+                    cleans and enriches data with complex metrics like Case Fatality Rate (CFR) and vaccination gaps.
+                    Automatically generates analytical insight visualizations including time-series trends and
+                    geo-heatmaps.</p>
                 <div class="project-tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Scikit-learn</span>
                     <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib</span>
                     <span class="tag">Seaborn</span>
-                    <span class="tag">Tableau</span>
+                    <span class="tag">Data Mining</span>
                 </div>
-                <a href="https://github.com/Eswar122-bit" class="project-link">View Repository</a>
+                <a href="https://github.com/Eswar122-bit/covid-19-data-analysis-project-using-python"
+                    class="project-link" target="_blank">View Repository</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card scroll-triggered" style="animation-delay: 0.6s;">
+                <div class="project-number">04</div>
+                <h3 class="project-title">Iris Dataset Exploratory Data Analysis</h3>
+                <div class="project-year">2024</div>
+                <p class="project-description">Conducted rigorous Exploratory Data Analysis (EDA) on the classic Iris
+                    dataset. The project includes extensive data cleaning, descriptive summary statistics, and advanced
+                    visualizations (histograms, pairplots, boxplots, heatmaps) to uncover actionable insights into class
+                    distributions and feature correlations.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">SciKit-Learn</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">Seaborn</span>
+                </div>
+                <a href="https://github.com/Eswar122-bit/Iris-Dataset---Exploratory-Data-Analysis-EDA-"
+                    class="project-link" target="_blank">View Repository</a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card scroll-triggered" style="animation-delay: 0.8s;">
+                <div class="project-number">05</div>
+                <h3 class="project-title">Titanic Survival EDA</h3>
+                <div class="project-year">2024</div>
+                <p class="project-description">A comprehensive Exploratory Data Analysis project on the famous Titanic
+                    dataset. Focused on rigorous data cleaning, engineering demographic and travel features, and
+                    producing insightful visualizations to uncover key predictors regarding passenger survival
+                    probabilities.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib</span>
+                    <span class="tag">EDA</span>
+                </div>
+                <a href="https://github.com/Eswar122-bit/Titanic-EDA" class="project-link" target="_blank">View
+                    Repository</a>
             </div>
 
             <!-- Coming Soon -->
-            <div class="project-card scroll-triggered" style="animation-delay: 0.45s; opacity: 0.5;">
-                <div class="project-number">04</div>
+            <div class="project-card scroll-triggered" style="animation-delay: 1.0s; opacity: 0.5;">
+                <div class="project-number">06</div>
                 <h3 class="project-title">Next Project Loading</h3>
                 <div class="project-year">Coming Soon</div>
-                <p class="project-description">🔮 Check back soon for exciting new data science and analytics projects showcasing advanced machine learning techniques and real-world applications.</p>
+                <p class="project-description">🔮 Check back soon for exciting new data science and analytics projects
+                    showcasing advanced machine learning techniques and real-world applications.</p>
                 <div class="project-tags">
-                    <span class="tag">In Progress</span>
+                    <span class="tag">In Progress...</span>
                 </div>
             </div>
         </div>
@@ -732,20 +914,56 @@
     <section class="skills" id="skills">
         <h2 class="section-header">Technical Toolkit</h2>
         <div class="section-divider"></div>
-        
+
         <div class="skills-grid">
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0s;"><div class="skill-name">Python</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.1s;"><div class="skill-name">Machine Learning</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.2s;"><div class="skill-name">Data Analysis</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.3s;"><div class="skill-name">SQL</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.4s;"><div class="skill-name">Pandas</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.5s;"><div class="skill-name">NumPy</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.6s;"><div class="skill-name">Scikit-learn</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.7s;"><div class="skill-name">Matplotlib</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.8s;"><div class="skill-name">Seaborn</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 0.9s;"><div class="skill-name">Streamlit</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 1s;"><div class="skill-name">Tableau</div></div>
-            <div class="skill-badge scroll-triggered" style="animation-delay: 1.1s;"><div class="skill-name">Git/GitHub</div></div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0s;">
+                <i class="devicon-python-plain colored skill-icon"></i>
+                <div class="skill-name">Python</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.1s;">
+                <span class="skill-icon-emoji">🤖</span>
+                <div class="skill-name">Machine Learning</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.2s;">
+                <span class="skill-icon-emoji">📈</span>
+                <div class="skill-name">Data Analysis</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.3s;">
+                <span class="skill-icon-emoji">🗄️</span>
+                <div class="skill-name">SQL</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.4s;">
+                <span class="skill-icon-emoji">🐼</span>
+                <div class="skill-name">Pandas</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.5s;">
+                <span class="skill-icon-emoji">🔢</span>
+                <div class="skill-name">NumPy</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.6s;">
+                <i class="devicon-scikitlearn-plain colored skill-icon"></i>
+                <div class="skill-name">Scikit-learn</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.7s;">
+                <i class="devicon-matplotlib-plain colored skill-icon"></i>
+                <div class="skill-name">Matplotlib</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.8s;">
+                <span class="skill-icon-emoji">🌊</span>
+                <div class="skill-name">Seaborn</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 0.9s;">
+                <i class="devicon-streamlit-plain colored skill-icon"></i>
+                <div class="skill-name">Streamlit</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 1s;">
+                <span class="skill-icon-emoji">📊</span>
+                <div class="skill-name">Tableau</div>
+            </div>
+            <div class="skill-badge scroll-triggered" style="animation-delay: 1.1s;">
+                <i class="devicon-github-original skill-icon" style="color: #F5F5F5;"></i>
+                <div class="skill-name">Git/GitHub</div>
+            </div>
         </div>
     </section>
 
@@ -753,14 +971,20 @@
     <section class="about" id="about">
         <h2 class="section-header">About Me</h2>
         <div class="section-divider"></div>
-        
+
         <div class="about-card scroll-triggered">
             <p class="about-text">
-                I'm <strong>Eswar Sai</strong>, a Data Scientist & Data Analyst from Vijayawada, India. I'm passionate about transforming raw data into actionable insights using Python, machine learning, and statistical analysis.
+                I'm <strong>Eswar Sai</strong>, a Data Scientist & Data Analyst from Vijayawada, India. I'm passionate
+                about transforming raw data into actionable insights using Python, machine learning, and statistical
+                analysis.
                 <br><br>
-                My expertise spans <strong>building predictive models</strong> (regression, classification, clustering), <strong>data visualization & storytelling</strong>, <strong>SQL database optimization</strong>, and <strong>creating interactive dashboards</strong> using Streamlit, Plotly, and Tableau.
+                My expertise spans <strong>building predictive models</strong> (regression, classification, clustering),
+                <strong>data visualization & storytelling</strong>, <strong>SQL database optimization</strong>, and
+                <strong>creating interactive dashboards</strong> using Streamlit, Plotly, and Tableau.
                 <br><br>
-                I believe in the power of data to drive decision-making and solve real-world problems. When I'm not analyzing datasets, you'll find me exploring new ML techniques, contributing to open-source, or building side projects that push the boundaries of data science.
+                I believe in the power of data to drive decision-making and solve real-world problems. When I'm not
+                analyzing datasets, you'll find me exploring new ML techniques, contributing to open-source, or building
+                side projects that push the boundaries of data science.
                 <br><br>
                 Let's collaborate on data-driven projects! 🚀
             </p>
@@ -774,7 +998,8 @@
             <a href="https://linkedin.com/in/eswar-sai" class="social-link" title="LinkedIn">💼</a>
             <a href="mailto:eswar@example.com" class="social-link" title="Email">✉️</a>
         </div>
-        <p class="footer-text">© 2025 Eswar Sai | Data Scientist & Data Analyst<br>Built with love using HTML5, CSS3 & JavaScript</p>
+        <p class="footer-text">© 2025 Eswar Sai | Data Scientist & Data Analyst<br>Built with love using HTML5, CSS3 &
+            JavaScript</p>
     </footer>
 
     <script>
@@ -820,96 +1045,135 @@
             }, 10);
         }, 3500);
 
-        // ===== HERO CANVAS - 3D GEOMETRY =====
+        // ===== ADVANCED NEURAL MESH ANIMATION =====
         const canvas = document.getElementById('heroCanvas');
         const ctx = canvas.getContext('2d');
         let mouseX = canvas.width / 2;
         let mouseY = canvas.height / 2;
+        let isMouseInArea = false;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
+            initParticles();
         }
 
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Particle system
         const particles = [];
-        const particleCount = window.innerWidth < 768 ? 1000 : 3000;
+        let particleCount = 150;
 
         class Particle {
             constructor() {
-                this.reset();
+                this.reset(true);
             }
 
-            reset() {
-                const angle = Math.random() * Math.PI * 2;
-                const distance = Math.random() * 150 + 100;
-                this.x = canvas.width / 2 + Math.cos(angle) * distance;
-                this.y = canvas.height / 2 + Math.sin(angle) * distance;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 0.5;
-                this.opacity = Math.random() * 0.5 + 0.3;
+            reset(randomizeParams = false) {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.z = Math.random() * 2 + 0.1; // 3D depth parallax
+                if (randomizeParams) {
+                    this.vx = (Math.random() - 0.5) * 1.2;
+                    this.vy = (Math.random() - 0.5) * 1.2;
+                }
+                this.baseSize = this.z * 1.5;
+                this.size = this.baseSize;
             }
 
             update() {
-                this.x += this.vx;
-                this.y += this.vy;
+                // Parallax depth movement
+                this.x += this.vx * this.z;
+                this.y += this.vy * this.z;
 
-                const dx = mouseX - this.x;
-                const dy = mouseY - this.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
 
-                if (distance < 200) {
-                    const angle = Math.atan2(dy, dx);
-                    this.vx += Math.cos(angle) * 0.02;
-                    this.vy += Math.sin(angle) * 0.02;
-                }
+                if (isMouseInArea) {
+                    const dx = mouseX - this.x;
+                    const dy = mouseY - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
 
-                // Slow down over time
-                this.vx *= 0.99;
-                this.vy *= 0.99;
+                    if (distance < 200) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (200 - distance) / 200;
 
-                // Boundary check
-                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
-                    this.reset();
+                        this.x -= forceDirectionX * force * 3 * this.z;
+                        this.y -= forceDirectionY * force * 3 * this.z;
+                    }
                 }
             }
 
             draw() {
-                ctx.fillStyle = `rgba(59, 130, 246, ${this.opacity})`;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(6, 182, 212, ${this.z / 2})`;
                 ctx.fill();
             }
         }
 
-        // Initialize particles
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
+        function initParticles() {
+            particles.length = 0;
+            particleCount = window.innerWidth < 768 ? 60 : 150;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
         }
 
-        // Mouse tracking
+        window.addEventListener('resize', resizeCanvas);
+
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
+            isMouseInArea = true;
         });
 
-        // Animation loop
+        document.addEventListener('mouseleave', () => {
+            isMouseInArea = false;
+        });
+
         function animateHero() {
-            ctx.fillStyle = 'rgba(8, 8, 8, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            particles.forEach(p => {
-                p.update();
-                p.draw();
-            });
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
 
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        const opacity = (1 - distance / 120) * (particles[i].z + particles[j].z) / 4;
+                        ctx.strokeStyle = `rgba(59, 130, 246, ${opacity})`;
+                        ctx.lineWidth = 1.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+
+                // Draw connection to mouse directly (Neural tethering)
+                if (isMouseInArea) {
+                    const dx = particles[i].x - mouseX;
+                    const dy = particles[i].y - mouseY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 200) {
+                        ctx.beginPath();
+                        const opacity = (1 - distance / 200) * 0.8;
+                        ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
+                        ctx.lineWidth = 2;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(mouseX, mouseY);
+                        ctx.stroke();
+                    }
+                }
+            }
             requestAnimationFrame(animateHero);
         }
 
+        resizeCanvas();
         animateHero();
 
         // ===== SCROLL TRIGGERED ANIMATIONS =====
@@ -932,4 +1196,5 @@
         });
     </script>
 </body>
+
 </html>
